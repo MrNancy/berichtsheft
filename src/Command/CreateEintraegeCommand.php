@@ -31,7 +31,7 @@ class CreateEintraegeCommand extends Command
         $date1 = new \DateTime('03.05.2021');
         $date2 = new \DateTime('28.08.2022');
 
-        for ($fromDate = $date1; $fromDate <= $date2; $fromDate->modify('+7 day')) {
+        for ($fromDate = $date1; $fromDate <= $date2; $fromDate->modify('+1 week')) {
             $randomDay = random_int(6, 7);
             $toDate = (clone $fromDate)->modify('+4 day');
             $date = (clone $fromDate)->modify('+' . $randomDay . ' day');
