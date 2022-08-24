@@ -1,0 +1,64 @@
+<div class="d-print-block ">
+    <table class="w-100 table table-bordered">
+        <tr>
+            <td>
+                <h3 class="m-0">
+                    Ausbildungsnachweis
+                </h3>
+            </td>
+            <td class="text-left">
+                Nr.
+                {% if key is defined %}
+                    {{ key }}
+                {% else %}
+                    {{ eintrag.id }}
+                {% endif %}
+            </td>
+            <td>
+                für die Zeit vom {{ eintrag.fromDate|date('d.m.Y') }}
+            </td>
+            <td>
+                bis
+            </td>
+            <td>
+                {{ eintrag.toDate|date('d.m.Y') }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                Abteilung oder Arbeitsgebiet: Anwendungsentwicklung
+            </td>
+            <td>
+                Datum:
+            </td>
+            <td>{{ eintrag.date|date('d.m.Y') }}</td>
+        </tr>
+    </table>
+
+    <table class="w-100 table table-bordered mt-2">
+        <tr>
+            <td class="fw-bold">
+                Betriebliche Tätigkeit
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ eintrag.workText|raw }}
+            </td>
+        </tr>
+    </table>
+
+    <table class="w-100 table table-bordered mt-2">
+        <tr>
+            <td class="fw-bold">
+                Berufsschule
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ eintrag.school|raw }}
+            </td>
+        </tr>
+    </table>
+
+</div>
