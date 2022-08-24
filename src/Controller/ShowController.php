@@ -30,7 +30,7 @@ class ShowController extends AbstractController
     {
         $eintraege = $entityManager
             ->getRepository(Eintrag::class)
-            ->findBy([], ['fromDate'=>'ASC']);
+            ->findBy([], ['fromDate' => 'ASC']);
 
         return $this->render('show_all/index.html.twig', [
             'eintraege' => $eintraege,
@@ -43,7 +43,7 @@ class ShowController extends AbstractController
 
         $eintraege = $entityManager
             ->getRepository(Eintrag::class)
-            ->findBy([], ['fromDate'=>'ASC']);
+            ->findBy([], ['fromDate' => 'ASC']);
 
         return $this->render('print/index.html.twig', [
             'eintraege' => $eintraege,

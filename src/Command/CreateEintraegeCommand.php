@@ -32,9 +32,9 @@ class CreateEintraegeCommand extends Command
         $date2 = new \DateTime('28.08.2022');
 
         for ($fromDate = $date1; $fromDate <= $date2; $fromDate->modify('+7 day')) {
-            $randomDay = random_int(6,7);
+            $randomDay = random_int(6, 7);
             $toDate = (clone $fromDate)->modify('+4 day');
-            $date = (clone $fromDate)->modify('+'.$randomDay.' day');
+            $date = (clone $fromDate)->modify('+' . $randomDay . ' day');
 
             $eintrag = (new Eintrag())
                 ->setFromDate($fromDate)

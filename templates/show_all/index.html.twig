@@ -1,11 +1,13 @@
 {% extends '@EasyAdmin/layout.html.twig' %}
 
 {% block content %}
-    {% set i = 0 %}
-    {% for eintrag in eintraege %}
-        {% set i = i + 1 %}
-        <div class="mt-5">
-            {% include 'eintrag.html.twig' with {'eintrag':eintrag,'key':i} %}
-        </div>
-    {% endfor %}
+    <div>
+        {% set i = 0 %}
+        {% for eintrag in eintraege %}
+            {% set i = i + 1 %}
+            <div class="mt-5">
+                {% include 'eintrag.html.twig' with { 'eintrag':eintrag, 'key':i } %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
