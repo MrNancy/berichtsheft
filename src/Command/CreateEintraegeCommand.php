@@ -41,6 +41,12 @@ class CreateEintraegeCommand extends Command
                 ->setToDate($toDate)
                 ->setDate($date);
 
+            $eintragRepository = $this->entityManager->getRepository(Eintrag::class);
+            $eintragFound = $eintragRepository->findOneBy(['fromDate' => $fromDate]);
+            if ($eintragFound) {
+                continue;
+            }
+
             $this->entityManager->persist($eintrag);
             $this->entityManager->flush();
         }
